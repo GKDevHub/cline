@@ -97,6 +97,21 @@ Try asking Cline to "test the app", and watch as he runs a command like `npm run
 -   **`@file`:** Adds a file's contents so you don't have to waste API requests approving read file (+ type to search files)
 -   **`@folder`:** Adds folder's files all at once to speed up your workflow even more
 
+### GitHub Actions Workflow
+
+This repository includes a GitHub Actions workflow to automate the build and packaging process for the VSCode extension. The workflow is defined in the `.github/workflows/build-and-package.yml` file.
+
+The workflow is triggered on push and pull request events to the `main` branch. It sets up Node.js, installs dependencies, runs tests, and builds the extension using the existing `package.json` scripts. The workflow also packages the extension using `vsce` and uploads the packaged extension as an artifact.
+
+### Manually Triggering the Packaging Step
+
+The GitHub Actions workflow includes a manual trigger to run the packaging step and download the vsix for testing. To manually trigger the packaging step, follow these steps:
+
+1. Go to the Actions tab of your repository on GitHub.
+2. Select the "Build and Package" workflow from the list of workflows.
+3. Click the "Run workflow" button.
+4. Select the branch you want to run the workflow on and click the "Run workflow" button again.
+
 ## Contributing
 
 To contribute to the project, start by exploring [open issues](https://github.com/cline/cline/issues) or checking our [feature request board](https://github.com/cline/cline/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop). We'd also love to have you join our [Discord](https://discord.gg/cline) to share ideas and connect with other contributors. If you're interested in joining the team, check out our [careers page](https://cline.bot/join-us)!
